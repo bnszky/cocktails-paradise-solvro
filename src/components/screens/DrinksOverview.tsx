@@ -11,10 +11,6 @@ function DrinksOverview() {
 
     const { isLoading: isLoadingCoctails, isError: isErrorCoctails, data: coctails } = useCoctailsQuery(activeCategory);
 
-    useEffect(() => {
-    console.log("Active category: ", activeCategory);
-    }, [activeCategory]);
-
     const handleCategoryClick = (name: string) => {
     setActiveCategory(name);
     };

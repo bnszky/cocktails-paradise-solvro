@@ -16,7 +16,7 @@ function CoctailCard({coctail}: {coctail: any}) {
         <CardAction className='flex flex-col items-end justify-center'>
           <div className='text-left px-2 mb-4 font-thin text-sm h-25 overflow-hidden'>{coctail?.instructions}</div>
           <Button asChild className="absolute bottom-3 right-3">
-            <Link to="/about">Read more</Link>
+            <Link to={`/drink/${coctail.id}`}>Read more</Link>
           </Button>
         </CardAction>
       </Card>

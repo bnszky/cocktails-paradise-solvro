@@ -5,6 +5,7 @@ import drink4 from '/assets/images/drink4.jpg';
 import logo from '/assets/images/logo.png';
 import barman from '/assets/images/barman.jpg';
 import background1 from '/assets/images/background1.jpg';
+import emptyProduct from '/assets/images/empty-product.jpg';
 
 export const images = {
   drink1,
@@ -14,4 +15,5 @@ export const images = {
   logo,
   barman,
   background1,
+  emptyProduct
 };

@@ -1,10 +1,10 @@
-import { useCoctailQuery } from '../hooks/useCoctailQuery';
+import { useCocktailQuery } from '../hooks/useCocktailQuery';
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardAction } from "@/components/ui/card";
 import { Link } from 'react-router-dom';
 
 function Home() {
-  const { isLoading, isError, data } = useCoctailQuery({ id: '11000' });
+  const { isLoading, isError, data } = useCocktailQuery({ id: '11000' });
   const coctail = data?.data;
 
   if (isLoading) return <div className="text-center">Loading...</div>;
