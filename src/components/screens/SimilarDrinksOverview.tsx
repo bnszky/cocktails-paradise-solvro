@@ -1,9 +1,18 @@
 import DrinksCarousel from '../cards/DrinksCarousel'
-import { useCoctailsQuery } from '../../hooks/useCoctailsQuery'
+import { useCocktailsQuery } from '../../hooks/useCocktailsQuery'
 
 function SimilarDrinksOverview({category, currentId}: {category: string, currentId: string}) {
 
-    const { isLoading: isLoadingCoctails, isError: isErrorCoctails, data: coctails } = useCoctailsQuery(category);
+    const { isLoading: isLoadingCoctails, isError: isErrorCoctails, data } = useCocktailsQuery([category]);
+
+    if(isLoadingCoctails) {
+        return <div>Loading...</div>
+    }
+
+    if(isErrorCoctails || !data) {
+        return <div>Error</div>
+    }
+    const { drinks: coctails } = data;
 
     const filteredCoctails = coctails?.filter(coctail => coctail.id !== currentId);
 

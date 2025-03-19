@@ -1,7 +1,7 @@
 import CategoryBadge from '../ui-wrapper/CategoryBadge'
 import DrinksCarousel from '../cards/DrinksCarousel'
 import { useCategoriesQuery } from '../../hooks/useCategoriesQuery'
-import { useCoctailsQuery } from '../../hooks/useCoctailsQuery'
+import { useCocktailsQuery } from '../../hooks/useCocktailsQuery'
 import { useEffect, useState } from 'react'
 
 function DrinksOverview() {
@@ -9,7 +9,16 @@ function DrinksOverview() {
     const { isLoading: isLoadingCategories, isError: isErrorCategories, data: categories } = useCategoriesQuery();
     const [activeCategory, setActiveCategory] = useState<string>("Cocktail");
 
-    const { isLoading: isLoadingCoctails, isError: isErrorCoctails, data: coctails } = useCoctailsQuery(activeCategory);
+    const { isLoading: isLoadingCoctails, isError: isErrorCoctails, data } = useCocktailsQuery([activeCategory]);
+
+    if(isLoadingCoctails) {
+        return <div>Loading...</div>
+    }
+    if(isErrorCoctails || !data) {
+        return <div>Error</div>
+    }
+
+    const { drinks: coctails } = data;
 
     const handleCategoryClick = (name: string) => {
     setActiveCategory(name);

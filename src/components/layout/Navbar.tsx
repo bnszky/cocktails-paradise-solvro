@@ -77,9 +77,9 @@ function Navbar() {
       </div>
       <nav className={`md:flex ${isMenuOpen ? 'block' : 'hidden'} md:block w-full justify-center`}>
           <ul className="flex flex-col md:flex-row justify-center items-center font-regular text-lg space-y-4 md:space-y-0 md:space-x-6 bg-primary-foreground">
-            <NavItem name="Home" to="/" end={true} />
+            <NavItem name="About" to="/" end={true} />
+            <NavItem name="Cocktails" to="/search" />
             <NavItem name="Favorites" to="/favorites" />
-            <NavItem name="About" to="/about" />
           </ul>
         </nav>
     </header>
