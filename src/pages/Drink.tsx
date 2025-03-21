@@ -32,7 +32,6 @@ export default function Drink() {
                 <div className='w-full flex justify-between items-end'>
                     <div className='flex flex-row'>
                         <h1 className="text-3xl lg:text-6xl font-bold my-4 sm:ml-8 text-left w-full">{drink.name}</h1>
-                        <StarButton cocktailId={id ?? ''} className='w-8 h-8 lg:w-16 lg:h-16 mt-5 ml-2'/>
                     </div>
                     <p className='text-right w-full text-xl lg:text-3xl text-primary font-semibold sm:mr-4 mb-4'>{drink.category}</p>
                 </div>

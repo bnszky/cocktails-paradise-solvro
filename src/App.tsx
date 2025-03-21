@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import About from './pages/About';
@@ -19,6 +19,7 @@ function App() {
                 <Route path={links.about} element={<About />} />
                 <Route path={links.cocktails} element={<Search />} />
                 <Route path={links.cocktail} element={<Drink />} />
+                <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             <Footer />
           </div>
