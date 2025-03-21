@@ -11,25 +11,24 @@ function DrinksOverview() {
 
     const { isLoading: isLoadingCoctails, isError: isErrorCoctails, data } = useCocktailsQuery([activeCategory]);
 
-    if(isLoadingCoctails) {
-        return <div>Loading...</div>
-    }
-    if(isErrorCoctails || !data) {
-        return <div>Error</div>
-    }
+    const [cocktails, setCocktails] = useState([]);
 
-    const { drinks: coctails } = data;
+    useEffect(() => {
+        if (data) {
+            setCocktails(data.drinks);
+        }
+    }, [data]);
 
     const handleCategoryClick = (name: string) => {
-    setActiveCategory(name);
+        setActiveCategory(name);
     };
 
     return (
     <div className="w-full flex flex-col items-center justify-center text-center p-5">
-    <h1 className="text-3xl font-bold mt-10 my-4">Czy jesteś gotów poznać nasze produkty?</h1>
-    <p>Spójrz na nasze wspaniałe produkty, odkrywaj różne rodzaje drinków</p>
+    <h1 className="text-3xl font-bold mt-10 my-4">Are you ready to discover our products?</h1>
+    <p>Every day we fill our website with new instructions. Explore millions of them! Let us know what do you think about this web app and share your feedback!</p>
     <div className="flex flex-wrap justify-center items-center mt-4 lg:w-1/2 md:w-2/3">
-        {categories != null && categories.map((category) => (
+        {categories != null && categories.map((category: {id: string, name: string}) => (
         <CategoryBadge
             key={category.id}
             name={category.name}
@@ -38,7 +37,7 @@ function DrinksOverview() {
         />
         ))}
     </div>
-        <DrinksCarousel cocktails={coctails} />
+        <DrinksCarousel cocktails={cocktails} />
     </div>
   )
 }

@@ -9,9 +9,17 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
   } from "../ui/alert-dialog"
-  import { Button } from "@/components/ui/button"
+
+  interface CustomAlertDialogProps {
+    isOpen: boolean;
+    onClose: () => void;
+    title: string;
+    message: string;
+    acceptMessage?: string | null;
+    cancelMessage?: string | null;
+  }
   
-  export function CustomAlertDialog({ isOpen, onClose, title, message, acceptMessage = "Continue", cancelMessage = "Cancel" }: { isOpen: boolean, onClose: () => void, title: string, message: string, acceptMessage?: string | null, cancelMessage?: string | null }) {
+  export function CustomAlertDialog({ isOpen, onClose, title, message, acceptMessage = "Continue", cancelMessage = "Cancel" } : CustomAlertDialogProps) {
     return (
       <AlertDialog open={isOpen} onOpenChange={onClose}>
         <AlertDialogContent>

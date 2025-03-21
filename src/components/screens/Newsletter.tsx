@@ -58,7 +58,7 @@ function Newsletter() {
     <div className="w-2/3 flex flex-row flex-wrap items-start justify-center my-20">
       <div className="flex flex-col w-140 lg:mr-20 text-center lg:text-left mb-5">
         <div className="text-3xl font-bold mb-4 text-primary">Newsletter</div>
-        <p className="text-xl text-secondary-foreground">Dołącz do naszego newslettera, aby otrzymywać najnowsze informacje o drinkach Dołącz do naszego newslettera, aby otrzymywać najnowsze informacje o drinkach Dołącz do naszego newslettera, aby otrzymywać najnowsze informacje o drinkach</p>
+        <p className="text-xl text-secondary-foreground">Join our newsletter to stay updated on the latest drink trends, recipes, and exclusive offers. Get inspired with new cocktail ideas and expert tips straight to your inbox. Don't miss out on the best ways to elevate your drinking experience—subscribe today!</p>
       </div>
       <div className="flex flex-col items-center justify-center text-center mt-5">
         <Form {...form}>

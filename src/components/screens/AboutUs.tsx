@@ -9,10 +9,7 @@ function AboutUs() {
       <div className="w-full text-left flex flex-col lg:w-1/2 p-10 space-y-4">
         <h1 className="text-primary text-3xl font-bold">About Us</h1>
         <p className="text-lg text-accent-foreground">
-          Some quick example text to build on the card title and make up the bulk of the card's content. 
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-          Some quick example text to build on the card title and make up the bulk of the card's content.
+          Ut felis ex, iaculis sed massa id, condimentum suscipit justo. Nulla facilisi. Donec ultrices arcu at dictum posuere. Vivamus iaculis ante vel massa interdum, nec ultricies tellus dignissim. Donec leo lacus, aliquet sed fringilla id, sagittis non massa. Ut iaculis bibendum ullamcorper. Cras eget sapien nulla. Quisque enim augue, semper euismod suscipit id, commodo eget dolor. Nunc sodales, leo at viverra pulvinar, mi libero lacinia diam, eu varius erat urna nec felis. Nunc non blandit mauris, quis feugiat urna. Curabitur in turpis vehicula, ornare massa ac,
         </p>
         <Button size="sm" variant={"outline"} className="rounded-full text-lg my-2 py-4 font-semibold w-48">
           <Instagram className="mr-2 text-primary font-bold" /> Follow

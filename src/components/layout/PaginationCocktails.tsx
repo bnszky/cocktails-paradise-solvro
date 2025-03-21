@@ -9,7 +9,13 @@ import {
     PaginationPrevious,
   } from "@/components/ui/pagination"
 
-function PaginationCocktails({currentPage, lastPage, setPage}: {currentPage: number, lastPage: number, setPage: (page: number) => void}) {
+interface PaginationCocktailsProps {
+    currentPage: number;
+    lastPage: number;
+    setPage: (page: number) => void;
+}
+
+function PaginationCocktails({currentPage, lastPage, setPage}: PaginationCocktailsProps) {
 
     if (lastPage <= 1) {
         return <div className='my-8'></div>

@@ -7,9 +7,9 @@ function Intro() {
     <div className="w-full h-screen flex">
       <div className="flex flex-col lg:flex-row w-full justify-center items-center bg-black text-white">
         <div className="w-full lg:w-1/2 justify-center items-start px-20 my-4 flex flex-col text-left text-2xl lg:text-4xl space-y-4">
-          <h1>Otwórz oczy razem z <span className="text-primary font-semibold">Cocktail Paradise</span></h1>
-          <h2>I odkryj swój raj pośród</h2>
-          <h3><span className="text-primary font-semibold">MILIONA</span> ofert</h3>
+          <h1>Open your eyes to <span className="text-primary font-semibold">MILLIONS</span> of products</h1>
+          <h2><span className="text-primary font-semibold">Cocktail Paradise </span>
+           makes it better!</h2>
           <Button size="lg" className="text-lg my-10 font-semibold">Zamów teraz</Button>
         </div>
         <div className="relative w-full lg:w-1/2 bg-black h-full justify-center items-center flex overflow-hidden">

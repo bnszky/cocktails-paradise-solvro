@@ -2,7 +2,7 @@ import { useSidebar } from "@/components/ui/sidebar";
 import { useCocktailsQuery } from "@/hooks/useCocktailsQuery";
 import { LoaderCircle, Sidebar, Search as SearchIcon, SlidersHorizontal } from "lucide-react";
 import Drink from "@/types/Drink";
-import CoctailCard from "@/components/cards/CoctailCard";
+import CocktailCard from "@/components/cards/CocktailCard";
 import PaginationCocktails from "@/components/layout/PaginationCocktails";
 import { useLocation, useNavigate } from 'react-router-dom';
 import React, { use, useState } from 'react';
@@ -105,10 +105,10 @@ function Search() {
     Array.from(ingredientsSet),
     isAlcoholic,
     instruction,
-    page
+    page,
   );
 
-  const { drinks, total, currentPage, perPage, lastPage } = data || {};
+  const { drinks, total, lastPage } = data || {};
 
   return <>
       <AppSidebar onClose={() => {
@@ -124,7 +124,7 @@ function Search() {
       <div style={{marginLeft: !isMobile && open ? '32rem' : '0'}} className="transition-all duration-500 ease-in-out">
         <div className="w-full p-8">
             <div className="flex flex-col items-start space-y-4 w-2/3">
-              <h1 className="text-3xl font-bold">Search Results</h1>
+              <h1 className="text-3xl font-bold">Search Results {`${(total && total > 0) ? '(' + total + ')' : ''}`}</h1>
               <div className="flex flex-row items-center justify-between w-90">
                 <SearchIcon className="w-8 h-8 text-primary" />
                 <Input 
@@ -153,7 +153,10 @@ function Search() {
                 <div className="text-center text-sm font-regular mt-4">We don't have these types of drinks. Devs drunk all bottles</div>
             </div>
           : drinks.map((drink: Drink) => (
-            <CoctailCard key={drink.id} coctail={drink} />
+            <CocktailCard 
+              key={drink.id} 
+              cocktail={drink} 
+            />
           ))}
         </div>
         {!isLoading && !isError && <PaginationCocktails currentPage={page} lastPage={lastPage} setPage={setPage}/>}

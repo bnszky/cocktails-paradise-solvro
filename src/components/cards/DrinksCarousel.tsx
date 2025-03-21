@@ -1,12 +1,13 @@
 import React from 'react'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import CoctailCard from './CoctailCard'
+import CocktailCard from './CocktailCard'
 import { Frown } from 'lucide-react'
+import Drink from "@/types/Drink";
 
-function DrinksCarousel({cocktails}: {cocktails: any}) {
+function DrinksCarousel({cocktails}: {cocktails: Drink[]}) {
 
-    let mdBasis;
-    let lgBasis;
+    let mdBasis: string;
+    let lgBasis: string;
 
     if(cocktails){
         mdBasis = cocktails.length > 1 ? 'md:basis-1/2' : 'md:basis-1/1'
@@ -23,7 +24,7 @@ function DrinksCarousel({cocktails}: {cocktails: any}) {
         <CarouselContent>
             {cocktails && cocktails.length != 0 ? cocktails.map((cocktail) => (
             <CarouselItem key={cocktail.id} className={`${lgBasis} ${mdBasis} sm:basis-1/1 pl-2 flex justify-center`}>
-                <CoctailCard coctail={cocktail} />
+                <CocktailCard cocktail={cocktail} />
             </CarouselItem>
             )) : 
             <CarouselItem className="w-60 h-60 flex flex-col items-center justify-center">

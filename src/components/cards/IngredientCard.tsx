@@ -3,7 +3,13 @@ import { ShoppingBasket, Martini } from 'lucide-react'
 import { HoverCard, HoverCardContent, HoverCardTrigger} from '../ui/hover-card'
 import { Badge } from '../ui/badge'
 
-function IngredientCard({ key, ingredient, color = "bg-accent" }: { key: number, ingredient: Ingredient, color: string }) {
+interface IngredientCardProps {
+    key: number;
+    ingredient: Ingredient;
+    color?: string;
+}
+
+function IngredientCard({ key, ingredient, color = "bg-accent" }: IngredientCardProps) {
   return (
     <HoverCard>
         <HoverCardTrigger asChild>

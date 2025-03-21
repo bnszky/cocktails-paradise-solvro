@@ -1,5 +1,6 @@
 // tailwind.config.js
 module.exports = {
+  darkMode: 'class', // or 'media' if you prefer
   content: [
     './pages/**/*.{ts,tsx}', // Adjust for your file structure
     './components/**/*.{ts,tsx}',
