@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button } from '../ui/button'
 
 function CategoryBadge({name, onClick, isActive}: {name: string, onClick: () => void, isActive: boolean}) {

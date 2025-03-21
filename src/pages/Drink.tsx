@@ -1,18 +1,15 @@
-import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useCocktailQuery } from '../hooks/useCocktailQuery'
-import { LoaderCircle, Martini, Star } from 'lucide-react';
-import {Drink as DrinkType} from '../types/Drink';
+import { LoaderCircle } from 'lucide-react';
 import SimilarDrinksOverview from '@/components/screens/SimilarDrinksOverview';
 import Instructions from '@/components/screens/Instructions';
 import IngredientsInfo from '@/components/screens/IngredientsInfo';
-import StarButton from '@/components/ui-wrapper/StarButton';
 import { Toaster } from '../components/ui/sonner';
 
 export default function Drink() {
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
-    const { data: drink, isLoading, isError } = useCocktailQuery<{ drink: DrinkType }>({ id });
+    const { data: drink, isLoading, isError } = useCocktailQuery({ id });
 
     if (isLoading) {
         return <div className='flex justify-center items-center h-screen'>

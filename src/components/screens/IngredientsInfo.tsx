@@ -1,6 +1,6 @@
 import Drink from '@/types/Drink'
 import { Martini } from 'lucide-react'
-import { Badge } from '@/components/ui/Badge'
+import { Badge } from '@/components/ui/badge'
 import Ingredient from '@/types/Ingredient'
 import IngredientCard from '@/components/cards/IngredientCard'
 

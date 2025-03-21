@@ -6,7 +6,7 @@ import Drink from './pages/Drink';
 import Search from './pages/Search';
 import { SidebarProvider } from './components/ui/sidebar';
 import { ThemeProvider } from './context/ThemeProvider';
-import {links} from './constants/links';
+import {links} from '@/constants/links';
 
 function App() {
   return (

@@ -3,7 +3,7 @@ import useFavorites from '@/hooks/useFavorites';
 import { useTheme } from '@/context/ThemeProvider';
 import { toast } from 'sonner';
 
-function StarButton({cocktailId, className, isPopUpWindow = false}: {cocktailId: string, className?: string, isPopUpWindow?: boolean}) {
+function StarButton({cocktailId, className}: {cocktailId: string, className?: string}) {
     const { isFavorite, toggleFavorite } = useFavorites(cocktailId);
     const { isDarkTheme } = useTheme();
     return (

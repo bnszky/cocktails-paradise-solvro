@@ -1,6 +1,5 @@
 import Drink from '@/types/Drink'
-import React from 'react'
-import {Button} from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
 import { Star } from 'lucide-react'
 import useFavorites from '@/hooks/useFavorites'
 import { useTheme } from '@/context/ThemeProvider'

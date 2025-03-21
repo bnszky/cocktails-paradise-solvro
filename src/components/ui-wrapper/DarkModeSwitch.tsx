@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTheme } from '@/context/ThemeProvider'
 import { Moon, Sun } from 'lucide-react'
 import { Label } from '../ui/label'

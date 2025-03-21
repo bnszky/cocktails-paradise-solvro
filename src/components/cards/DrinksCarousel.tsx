@@ -1,4 +1,3 @@
-import React from 'react'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import CocktailCard from './CocktailCard'
 import { Frown } from 'lucide-react'

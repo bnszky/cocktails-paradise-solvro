@@ -1,11 +1,11 @@
 import { useSidebar } from "@/components/ui/sidebar";
 import { useCocktailsQuery } from "@/hooks/useCocktailsQuery";
-import { LoaderCircle, Sidebar, Search as SearchIcon, SlidersHorizontal } from "lucide-react";
+import { LoaderCircle, Search as SearchIcon, SlidersHorizontal } from "lucide-react";
 import Drink from "@/types/Drink";
 import CocktailCard from "@/components/cards/CocktailCard";
 import PaginationCocktails from "@/components/layout/PaginationCocktails";
 import { useLocation, useNavigate } from 'react-router-dom';
-import React, { use, useState } from 'react';
+import { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import AppSidebar from "@/components/layout/AppSidebar";
