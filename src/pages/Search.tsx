@@ -88,16 +88,17 @@ function Search() {
     const categories = Array.from(categoriesSet).join(',');
     const glasses = Array.from(glassesSet).join(',');
     const ingredients = Array.from(ingredientsSet).map(encodeURIComponent).join(',');
-    const searchParams = new URLSearchParams({
-      categories,
-      glasses,
-      ingredients,
-      isAlcoholic: isAlcoholic === null ? 'null' : isAlcoholic.toString(),
-      instruction,
-      page: page.toString()
-    });
+    const searchParams = new URLSearchParams();
+
+    if (categories) searchParams.set('categories', categories);
+    if (glasses) searchParams.set('glasses', glasses);
+    if (ingredients) searchParams.set('ingredients', ingredients);
+    searchParams.set('isAlcoholic', isAlcoholic === null ? 'null' : isAlcoholic.toString());
+    if (instruction) searchParams.set('instruction', instruction);
+    searchParams.set('page', page.toString());
+
     navigate(`/search?${searchParams.toString()}`, { replace: true });
-  }, [categoriesSet, glassesSet, ingredientsSet, isAlcoholic, page]);
+  }, [categoriesSet, glassesSet, ingredientsSet, isAlcoholic, page, instruction]);
 
   const { data, isLoading, isError } = useCocktailsQuery(
     Array.from(categoriesSet),
@@ -107,6 +108,11 @@ function Search() {
     instruction,
     page,
   );
+
+  useEffect(() => {
+    setOpenMobile(true);
+    setOpen(true);
+  }, []);
 
   const { drinks, total, lastPage } = data || {};
 
@@ -121,7 +127,7 @@ function Search() {
       selectedIngredients={ingredientsSet} addIngredient={addIngredient} removeIngredient={removeIngredient}
       />
       <main>
-      <div style={{marginLeft: !isMobile && open ? '32rem' : '0'}} className="transition-all duration-500 ease-in-out">
+      <div style={{marginLeft: (!isMobile && open) ? '32rem' : '0'}} className="transition-all duration-500 ease-in-out">
         <div className="w-full p-8">
             <div className="flex flex-col items-start space-y-4 w-2/3">
               <h1 className="text-3xl font-bold">Search Results {`${(total && total > 0) ? '(' + total + ')' : ''}`}</h1>
@@ -134,7 +140,7 @@ function Search() {
                 onChange={e => setInstruction(e.target.value)} />
               </div>
               <div className="flex flex-row space-x-2">
-                {!open && !openMobile ? <Button variant="destructive" className="w-30" onClick={() => {
+                {!open || !openMobile ? <Button variant="destructive" className="w-30" onClick={() => {
                   setOpen(true);
                   setOpenMobile(true);
                 }}><SlidersHorizontal/>Filter</Button> : <div className="h-9"/>}
