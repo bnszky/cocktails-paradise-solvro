@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-export function useCocktailsQuery(categories: string[] = [], glasses: string[] = [], ingredients: string[] = [], isAlcoholic: null | boolean = null, instruction: string, page: number = 1) {
+export function useCocktailsQuery(categories: string[] = [], glasses: string[] = [], ingredients: string[] = [], isAlcoholic: null | boolean = null, instruction: string = '', page: number = 1) {
     const queryString = [
         ...categories.map(category => `category=${category}`),
         ...glasses.map(glass => `glass=${glass}`),

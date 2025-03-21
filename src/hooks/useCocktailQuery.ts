@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-export function useCocktailQuery({id} : {id: string}) {
+export function useCocktailQuery(id: string) {
 
     return useQuery({
         queryKey: ['cocktail', id],

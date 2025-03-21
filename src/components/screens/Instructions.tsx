@@ -17,7 +17,7 @@ function Instructions({drink}: {drink: Drink}) {
         <div className='w-full mb-2 mt-2 border-2 border-gray-200'></div>
         <p className='text-lg'>{drink.instructions}</p>
         {!isFavorite && <Button className='mt-4' variant={"outline"} onClick={toggleFavorite}><Star className='w-6 h-6'/>Add to favorites</Button>}
-        {isFavorite && <Button className='mt-4 bg-primary' variant={"primary"} onClick={toggleFavorite}><Star className='w-6 h-6' fill={isDarkTheme ? 'white' : 'orange'}/>Remove from favorites</Button>}
+        {isFavorite && <Button className='mt-4 bg-primary' variant={"default"} onClick={toggleFavorite}><Star className='w-6 h-6' fill={isDarkTheme ? 'white' : 'orange'}/>Remove from favorites</Button>}
     </div>
   )
 }

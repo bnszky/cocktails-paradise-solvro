@@ -5,11 +5,16 @@ import SimilarDrinksOverview from '@/components/screens/SimilarDrinksOverview';
 import Instructions from '@/components/screens/Instructions';
 import IngredientsInfo from '@/components/screens/IngredientsInfo';
 import { Toaster } from '../components/ui/sonner';
+import { useEffect } from 'react';
 
 export default function Drink() {
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
-    const { data: drink, isLoading, isError } = useCocktailQuery({ id });
+    const { data: drink, isLoading, isError } = useCocktailQuery( id ?? '' );
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
 
     if (isLoading) {
         return <div className='flex justify-center items-center h-screen'>

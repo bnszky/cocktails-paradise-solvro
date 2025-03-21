@@ -50,7 +50,7 @@ export default function AppSidebar({ onClose, isAlcoholic, setIsAlcoholic,
     <Sidebar>
       <SidebarHeader className="p-4 flex flex-row items-center justify-between">
         <div className="text-xl font-bold">Filter Drinks</div>
-        <Button variant="primary" onClick={onClose}>Close <ChevronRight className="w-8 h-8 -mb-0.5"/></Button>
+        <Button variant="default" onClick={onClose}>Close <ChevronRight className="w-8 h-8 -mb-0.5"/></Button>
       </SidebarHeader>
       <SidebarContent className={`flex ${!isMobile && 'flex-row'}`}>
         <div>

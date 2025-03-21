@@ -6,10 +6,10 @@ import { useEffect, useState } from 'react'
 
 function DrinksOverview() {
 
-    const { isLoading: isLoadingCategories, isError: isErrorCategories, data: categories } = useCategoriesQuery();
+    const { data: categories } = useCategoriesQuery();
     const [activeCategory, setActiveCategory] = useState<string>("Cocktail");
 
-    const { isLoading: isLoadingCoctails, isError: isErrorCoctails, data } = useCocktailsQuery([activeCategory]);
+    const { data } = useCocktailsQuery([activeCategory]);
 
     const [cocktails, setCocktails] = useState([]);
 
