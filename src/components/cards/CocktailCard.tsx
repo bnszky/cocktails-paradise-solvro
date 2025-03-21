@@ -11,7 +11,7 @@ function CocktailCard({cocktail}: {cocktail: Drink}) {
         <CardHeader className='items-center justify-between relative text-left'>
             <CardTitle className='text-md w-35'>{cocktail?.name}</CardTitle>
             <CardDescription>{cocktail?.glass}</CardDescription>
-            <StarButton cocktailId={cocktail.id} />
+            <StarButton cocktailId={cocktail.id} className="cursor-pointer absolute right-5"/>
         </CardHeader>
         <CardAction className='flex flex-col items-end justify-center'>
           <div className='text-left px-2 mb-4 font-thin text-sm h-25 overflow-hidden'>{cocktail?.instructions}</div>

@@ -2,15 +2,13 @@ import { Star } from 'lucide-react';
 import useFavorites from '@/hooks/useFavorites';
 import { useTheme } from '@/context/ThemeProvider';
 import { toast } from 'sonner';
-import { Toaster } from '../ui/sonner';
 
-function StarButton({cocktailId}: {cocktailId: string}) {
+function StarButton({cocktailId, className, isPopUpWindow = false}: {cocktailId: string, className?: string, isPopUpWindow?: boolean}) {
     const { isFavorite, toggleFavorite } = useFavorites(cocktailId);
     const { isDarkTheme } = useTheme();
     return (
-        <>
         <Star 
-            className="cursor-pointer absolute right-5" 
+            className={className} 
             fill={isFavorite ? 'orange' : 'white'} 
             color={isFavorite ? 'orange' : (isDarkTheme ? 'gray' : 'orange')} 
             onClick={() => {
@@ -19,8 +17,6 @@ function StarButton({cocktailId}: {cocktailId: string}) {
                 toggleFavorite()
             }} 
         />
-        <Toaster toastOptions={{ style: { backgroundColor: 'rgba(0, 0, 0, 0.8)', color: 'white', border: '1px solid #EC5800' } }}/>
-        </>
     )
 }
 

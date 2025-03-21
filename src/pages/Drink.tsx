@@ -6,6 +6,8 @@ import {Drink as DrinkType} from '../types/Drink';
 import SimilarDrinksOverview from '@/components/screens/SimilarDrinksOverview';
 import Instructions from '@/components/screens/Instructions';
 import IngredientsInfo from '@/components/screens/IngredientsInfo';
+import StarButton from '@/components/ui-wrapper/StarButton';
+import { Toaster } from '../components/ui/sonner';
 
 export default function Drink() {
     const navigate = useNavigate();
@@ -19,7 +21,7 @@ export default function Drink() {
     }
 
     if (isError) {
-        navigate('/about');
+        navigate('/');
         return null;
     }
 
@@ -30,7 +32,7 @@ export default function Drink() {
                 <div className='w-full flex justify-between items-end'>
                     <div className='flex flex-row'>
                         <h1 className="text-3xl lg:text-6xl font-bold my-4 sm:ml-8 text-left w-full">{drink.name}</h1>
-                        <Star className='w-8 h-8 lg:w-16 lg:h-16 mt-5 ml-2'/>
+                        <StarButton cocktailId={id ?? ''} className='w-8 h-8 lg:w-16 lg:h-16 mt-5 ml-2'/>
                     </div>
                     <p className='text-right w-full text-xl lg:text-3xl text-primary font-semibold sm:mr-4 mb-4'>{drink.category}</p>
                 </div>
@@ -41,6 +43,7 @@ export default function Drink() {
             </div>
         </div>
         <SimilarDrinksOverview category={drink.category} currentId={drink.id}/>
+        <Toaster toastOptions={{ style: { backgroundColor: 'rgba(0, 0, 0, 0.8)', color: 'white', border: '1px solid #EC5800' } }}/>
         </>
     )
 }
