@@ -1,5 +1,6 @@
 import { Button } from '../ui/button';
 import { images } from '@/constants/images';
+import { Link } from 'react-router-dom';
 
 function Intro() {
   return (
@@ -9,7 +10,9 @@ function Intro() {
           <h1>Open your eyes to <span className="text-primary font-semibold">MILLIONS</span> of products</h1>
           <h2><span className="text-primary font-semibold">Cocktail Paradise </span>
            makes it better!</h2>
-          <Button size="lg" className="text-lg my-10 font-semibold">Zamów teraz</Button>
+           <Button asChild className="text-lg font-semibold mt-5" size="lg" variant={'default'}>
+            <Link to={`/search`}>Search Now</Link>
+          </Button>
         </div>
         <div className="relative w-full lg:w-1/2 bg-black h-full justify-center items-center flex overflow-hidden">
           <img src={images.background1} alt="juice" className="absolute shadow-xl h-180 w-full lg:shadow-white lg:h-240 -bottom-50 -right-10 rounded p-4 object-contain" />

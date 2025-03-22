@@ -19,7 +19,7 @@ function SimilarDrinksOverview({category, currentId}: {category: string, current
 
     return (
     <div className="w-full flex flex-col items-center justify-center text-center p-5">
-    <h1 className="text-3xl font-bold mt-10 my-4">Are you ready to discover our products?</h1>
+    <h1 className="text-3xl font-bold mt-10 my-4">Find more similar drinks!</h1>
     <p>Every day we fill our website with new instructions. Explore millions of them! Let us know what do you think about this web app and share your feedback!</p>
     <DrinksCarousel cocktails={filteredCoctails} />
     </div>

@@ -33,9 +33,9 @@ export default function Drink() {
             <div className="w-5/6 md:w-2/3 flex flex-col">
                 <div className='w-full flex justify-between items-end'>
                     <div className='flex flex-row'>
-                        <h1 className="text-3xl lg:text-6xl font-bold my-4 sm:ml-8 text-left w-full">{drink.name}</h1>
+                        <h1 className="text-3xl lg:text-6xl font-bold my-4 sm:ml-8 text-left w-2/3">{drink.name}</h1>
                     </div>
-                    <p className='text-right w-full text-xl lg:text-3xl text-primary font-semibold sm:mr-4 mb-4'>{drink.category}</p>
+                    <p className='text-right w-1/3 text-xl lg:text-3xl text-primary font-semibold sm:mr-4 mb-4'>{drink.category}</p>
                 </div>
                 <div className='w-full flex flex-row flex-wrap'>
                     <Instructions drink={drink}/>
